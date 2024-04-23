@@ -26,7 +26,7 @@ $mail->SMTPSecure = "ssl";
 $mail->setFrom('prime.bca@email.com', 'SparkFund Team');
 
 //receiver address and name
-$mail->addAddress('sssgame77@gmail.com', $receiverName);
+$mail->addAddress($receiverEmail, $receiverName);
 // $mail->addAddress($receiver, 'Aakriti');
 
 
