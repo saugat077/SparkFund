@@ -1,0 +1,234 @@
+:root {
+  --main: #0e0e11;
+  --secondary: #2a2b2b;
+  --white: #fefffe;
+  --accent: #66c18f;
+  --accent2: #defcf9;
+  --primary-color: rgb(11, 78, 179);
+}
+
+.form {
+  margin: 0 auto;
+  /* border: 1px solid #ccc; */
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  color: var(--white);
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem;
+}
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  background-color: var(--secondary);
+  z-index: -1;
+}
+
+.progress {
+  background-color: var(--accent);
+  width: 0%;
+  transition: 0.3s;
+}
+
+.progress-step {
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-step::before {
+  counter-increment: step;
+  content: counter(step);
+}
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #9c9c9c;
+}
+
+.progress-step-active {
+  background-color: var(--accent);
+  color: var(--secondary);
+}
+
+/* Form  Step*/
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 2rem 0;
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.input-group input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: #f5ebeb;
+  /* border: 1px solid #ccc; */
+  border-radius: 1.25rem;
+  resize: none;
+}
+
+.width-50 {
+  width: 20%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+/* Photoupload */
+.photoContainer {
+  max-width: 1000px;
+  width: 100%;
+  background: var(--white);
+  padding: 10px;
+  border-radius: 30px;
+  color: var(--secondary);
+}
+.img-area {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  background: var(--grey);
+  /* margin-bottom: 30px; */
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img-area .icon {
+  font-size: 100px;
+}
+.img-area h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+.img-area p {
+  color: #999;
+}
+.img-area p span {
+  font-weight: 600;
+}
+.img-area img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 100;
+}
+.img-area::before {
+  content: attr(data-img);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 200;
+}
+.img-area.active:hover::before {
+  opacity: 1;
+}
+.select-image {
+  display: block;
+  width: 100%;
+  padding: 3px;
+  border-radius: 30px;
+  background: var(--accent);
+  color: var(--secondary);
+  font-weight: 500;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.select-image:hover {
+  background: var(--white);
+}
+
+/* Button */
+
+.btns-group {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin-top: 5rem;
+}
+
+.btn {
+  padding: 0.75rem;
+  display: block;
+  text-decoration: none;
+  background-color: var(--accent);
+  color: #f3f3f3;
+  text-align: center;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:hover {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--accent);
+}

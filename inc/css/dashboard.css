@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main: #0e0e11;
+  --secondary: #2a2b2b;
+  --white: #fefffe;
+  --accent: #66c18f;
+  --accent2: #defcf9;
+}
+
+body {
+  background: var(--main);
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+}
+
+aside {
+  background: var(--main);
+  width: 26%;
+  height: 100vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 8px 16px var(--accent);
+}
+
+aside .top {
+  /* padding: 25px; */
+  padding-block: 3rem;
+  padding-inline: 3rem;
+}
+
+aside .middle .nav-list {
+  list-style: none;
+  padding: 5px;
+}
+
+aside .middle .nav-list a {
+  color: white;
+  display: block;
+  text-decoration: none;
+  padding: 20px;
+  border-radius: 15px;
+  font-size: 22px;
+}
+
+aside .middle .nav-list li {
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  /* margin-inline: 1rem 0; */
+  /* box-shadow: 2px 0 0 var(--body-bg); */
+  text-decoration: none;
+}
+
+aside .middle .nav-list a:hover {
+  color: var(--accent);
+}
+
+aside .middle .nav-list a:active,
+aside .middle .nav-list a:focus {
+  background: var(--secondary) !important;
+  color: var(--accent) !important;
+  text-decoration: none !important;
+}
+
+.bottom {
+  /* background-color: var(--secondary); */
+  padding-block: 3rem;
+  padding-inline: 3rem;
+}
+
+.bottom p {
+  font-size: 18px;
+  color: var(--accent2);
+}
+/* .active{
+    background: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 73%, rgba(252,176,69,1) 100%);
+    font-size: 28px;
+  } */
+
+.dashContainer {
+  flex-grow: 1;
+  padding: 2rem 10rem 2rem 12rem;
+}
+
+header {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 2rem;
+}
+
+.add_event_button {
+  width: 100%;
+  margin: 20px;
+}
+
+button {
+  height: 40px;
+  width: 150px;
+  padding: 5px;
+  margin: 5px;
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+section {
+  /* width: 1000px; */
+  margin: 0px auto;
+}

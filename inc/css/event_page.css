@@ -1,0 +1,306 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --main: #0e0e11;
+  --secondary: #2a2b2b;
+  --white: #fefffe;
+  --accent: #66c18f;
+}
+
+body {
+  background: var(--main);
+}
+
+/* The header contains image & button */
+header {
+  width: 100%;
+  /* height: 650px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* position: absolute; */
+  top: 0px;
+  z-index: 0;
+  margin-bottom: 2rem;
+  background-repeat: no-repeat;
+  /* overflow: hidden; */
+}
+
+header h3 {
+  font-size: 50px;
+  color: var(--white);
+  text-shadow: 0px 0px 12px var(--accent2);
+  text-align: center;
+  line-height: 60px;
+  margin: 30px;
+}
+
+header button {
+  padding: 15px 40px;
+  border-radius: 30px;
+  background-color: var(--accent);
+}
+
+header button a {
+  font-size: medium;
+  font-weight: bold;
+  color: var(--white);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* width: 100%; */
+  background: var(--main);
+  /* box-shadow: 0px 0px 12px var(--accent2); */
+  padding: 10px 50px;
+  height: 100%;
+}
+
+main .event-details-section {
+  width: 64%;
+  /* height: 900px; */
+  /* border: 1px solid var(--accent); */
+  padding: 10px;
+  margin: 5px 0px;
+  /* background-color: blue; */
+}
+
+main .event-title {
+  /* background-color: green; */
+  padding: 5px;
+  margin-bottom: 25px;
+  color: var(--white);
+}
+
+main .event-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 0px;
+  /* background-color: green; */
+}
+
+main .event-details {
+  grid-area: 1 / 1 / 2 / 3;
+  /* background-color: green; */
+  /* height: 2000px; */
+  width: 100%;
+  padding: 5px;
+}
+
+/* Event details contents */
+main .event-cover {
+  grid-area: 1 / 2 / 2 / 3;
+  /* background-color: yellow; */
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+  /* padding: 5px; */
+  margin-bottom: 5px;
+}
+
+main .event-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+main .event-creator {
+  /* grid-area: 1 / 1 / 2 / 2; */
+  /* background-color: rgb(255, 99, 8); */
+  /* height: 600px; */
+  width: 100%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+
+.event-creator i {
+  margin-right: 1rem;
+  color: var(--accent2);
+}
+
+.event-creator p {
+  color: var(--white);
+  font-size: 14px;
+}
+
+main .event-description {
+  /* grid-area: 2 / 1 / 3 / 3; */
+  /* background-color: purple; */
+  /* height: 600px; */
+  width: 100%;
+  padding: 5px;
+  color: var(--white);
+}
+
+/* Donation realted css */
+main .event-donate {
+  grid-area: 1 / 3 / 2 / 4;
+  background-color: var(--secondary);
+  height: 600px;
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+.donation-raised h5 {
+  font-size: 14px;
+  margin: 5px 0px;
+}
+
+.donation-progress-bar {
+  width: 100%;
+  background-color: #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin: 5px 0px;
+  overflow: hidden;
+}
+
+.progress-bar-inner {
+  background-color: #4caf50; /* Green */
+  height: 5px;
+  border-radius: 5px;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+
+.event-donate button {
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent);
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Hide the modal by default */
+#donationModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+}
+
+.modal-content {
+  background-color: var(--white);
+  margin: 15% auto;
+  padding: 5px 20px;
+  /* border: 1px solid var(--accent); */
+  width: 25%;
+  height: 300px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.close_navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  border: 1px solid var(--accent);
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 5px;
+  background-color: var(--accent);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.donation_success {
+  /* position: fixed; */
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  font-size: 28px;
+  color: var(--accent);
+  font-weight: 700;
+  text-align: center;
+}
+
+.donation_failed {
+  /* position: fixed; */
+  top: 50%;
+  left: 50%;
+  /* transform: translate(-50%, -50%); */
+  font-size: 28px;
+  color: red;
+  font-weight: 700;
+  text-align: center;
+}
