@@ -40,12 +40,11 @@ session_start(); // Start the session
           include_once "./db.php";
           
           // Fetch funding events from the database
-          // $query = "SELECT funds.*, users.fname AS creator_name FROM funds LEFT JOIN users ON funds.user_id = users.id";
           $query = "SELECT funds.*, users.fname AS creator_name
-          FROM funds
-          LEFT JOIN users ON funds.user_id = users.id
-          ORDER BY funds.fund_id DESC
-          LIMIT 5";
+                    FROM funds
+                    LEFT JOIN users ON funds.user_id = users.id
+                    ORDER BY funds.fund_id DESC
+                    LIMIT 5";
 
           $result = mysqli_query($conn, $query);
 
@@ -63,16 +62,49 @@ session_start(); // Start the session
                   $divClass = 'div' . $counter;
 
                   // Display the event HTML
-                //   echo '<a href="event_details.php?id=' . $fundId . '" class="event_details_link">';
                   echo '<div class="' . $divClass . '"> ';
                   echo '<a href="./pages/event_page.php?id=' . $fundId . '" style="color:var(--secondary);text-decoration:none;">';
                   echo '<div class="event-cover" style="background-image: url(\'./inc/uploads/' . str_replace(' ', '%20', $fundCover) . '\')">';
                   echo '<div class="creator-name">' . $creatorName . '</div>'; // Display the creator's name
                   echo '</div>';
                   echo '<div class="event-header"><h5>' . $fundTitle . '</h5></div>';
-                  echo '<div class="event-fund-raised"><p>Shows how much is raised in a bar</p></div>'; // Replace this with your actual fund raised value
+                  echo '<div class="event-fund-raised">';
+                  
+                  // Fetch the total sum of donations for the event
+                  $totalDonations = 0;
+                  $query_donations = "SELECT SUM(amount) AS total_donations FROM donations WHERE funds_id = $fundId";
+                  $result_donations = mysqli_query($conn, $query_donations);
+                  if ($result_donations && mysqli_num_rows($result_donations) > 0) {
+                      $totalDonations = mysqli_fetch_assoc($result_donations)['total_donations'];
+                  }
+
+                  // Fetch the fund target from the database
+                  $query_target = "SELECT fund_target FROM funds WHERE fund_id = $fundId";
+                  $result_target = mysqli_query($conn, $query_target);
+                  if ($result_target && mysqli_num_rows($result_target) > 0) {
+                      $fundTarget = mysqli_fetch_assoc($result_target)['fund_target'];
+                  } else {
+                      $fundTarget = 0; // Default value if no fund target is found
+                  }
+
+                  // Calculate the percentage of the goal reached
+                  $percentage = ($totalDonations / $fundTarget) * 100;
+
+                  
+                  echo '<div class="donation-progress-bar">';
+                  echo '<div class="progress-bar-inner" style="width: ' . $percentage . '%;"></div>';
+                    echo '</div>';
+                  echo '</div>'; // Close the event-fund-raised div
+
+                  // Display the total donations raised and the progress bar
+                  if ($totalDonations == 0) {
+                    echo '<p style="color:var(--white); font-size:12px;">$0 raised.</p>';
+                } else {
+                    echo '<p style="color:var(--white); font-size:12px;">$' . $totalDonations . ' raised </p>';
+                }
+
                   echo '</a>'; // Close the anchor tag
-                  echo '</div>';
+                  echo '</div>'; // Close the div with the event
                   // Increment the counter
                   $counter++;
               }
@@ -87,8 +119,9 @@ session_start(); // Start the session
 </section>
 
 
+
 <!-- How Sparkfund works -->
-    <section class="video">
+    <!-- <section class="video">
           <div class="title">
               <h2>How Sparkfund works</h2>
           </div>
@@ -101,7 +134,7 @@ session_start(); // Start the session
               >
           </iframe>
           </div>
-      </section>
+      </section> -->
   </main>
 
 
