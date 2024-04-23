@@ -164,6 +164,7 @@ session_start(); // Start the session
 
 
   <script src="./inc/js/faq.js"></script>
+  include('./vayo.php');
 
 
 
