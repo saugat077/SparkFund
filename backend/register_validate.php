@@ -41,7 +41,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 } else {
                     mysqli_stmt_bind_param($stmt, "ssss", $fname, $lname, $email, $hash);
                     mysqli_stmt_execute($stmt);
-                    // Registration successful, redirect to confirmation page with success message
+
+                    // Registration successful, send email to the user
+                    
+                    $receiverEmail = $email;
+                    $receiverName = $fname . ' ' . $lname;
+                    require_once '../backend/send_mail.php'; // Include send_mail.php only when registration is successful
+
+
+                     // Redirect to confirmation page with success message
                     header("Location: ../pages/login_confirmation.php?registration=success");
                     exit();
                 }

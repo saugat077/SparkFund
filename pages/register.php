@@ -64,6 +64,9 @@
         </div>
         <!-- submit button -->
         <button type="submit" class="form-btn">Register</button>
+        <div class="sign-up-link">
+       <span ><a href="./login.php">Login</a></span>
+      </div>
       </form>
       <!-- End of Right side -->
     </div>

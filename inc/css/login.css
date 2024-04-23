@@ -54,7 +54,7 @@ body {
 /* Right side Signup/register section*/
 .form-container {
   background-color: var(--main);
-  padding: 100px 200px 100px 200px;
+  padding: 80px 80px 80px 160px;
   box-sizing: border-box;
   border-top-right-radius: 120px;
   box-shadow: 10px 4px 8px rgba(102, 193, 143, 0.5);

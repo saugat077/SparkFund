@@ -88,7 +88,7 @@ session_start(); // Start the session
 
 
 <!-- How Sparkfund works -->
-    <!-- <section class="video">
+    <section class="video">
           <div class="title">
               <h2>How Sparkfund works</h2>
           </div>
@@ -101,7 +101,7 @@ session_start(); // Start the session
               >
           </iframe>
           </div>
-      </section> -->
+      </section>
   </main>
 
 
@@ -164,7 +164,7 @@ session_start(); // Start the session
 
 
   <script src="./inc/js/faq.js"></script>
-  include('./vayo.php');
+
 
 
 
