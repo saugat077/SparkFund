@@ -24,6 +24,7 @@ session_start(); // Start the session
             <div class="middle">
                 <ul class="nav-list">
                     <!-- Each option has parameter set -->
+                    <li><a href="dashboard.php?">Dashboard</a></li>
                     <li><a href="dashboard.php?option=fundraiser">Start a fundraiser</a></li>
                     <li><a href="dashboard.php?option=my_fundraisers">Your fundraisers</a></li>
                     <li><a href="dashboard.php?option=donations">Donations you've made</a></li>
