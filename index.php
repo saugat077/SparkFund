@@ -20,7 +20,16 @@ session_start(); // Start the session
           ?>
           <!-- Spark fund button -->
           <h3>Your home <br>for help</h3>
-          <button><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund </a></button>
+          <?php
+    // Check if the user is logged in
+    if (isset($_SESSION['user_id'])) {
+        // If logged in, redirect to the dashboard
+        echo '<button><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund</a></button>';
+    } else {
+        // If not logged in, redirect to the login page
+        echo '<button><a href="./pages/login.php">Start a Sparkfund</a></button>';
+    }
+    ?>
   </header>
 
 
