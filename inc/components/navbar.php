@@ -38,7 +38,7 @@ session_start(); // Start the session
         </li>';
         } else {
             echo '<li><a href="./pages/login.php">Sign in</a></li>';
-            echo '<li><button><a href="">Start a sparkfund</a></button></li>';
+            echo '<li><button><a href="./pages/login.php">Start a sparkfund</a></button></li>';
         }
         
         ?>
