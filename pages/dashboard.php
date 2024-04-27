@@ -28,7 +28,7 @@ session_start(); // Start the session
                     <li><a href="dashboard.php?option=fundraiser">Start a fundraiser</a></li>
                     <li><a href="dashboard.php?option=my_fundraisers">Your fundraisers</a></li>
                     <li><a href="dashboard.php?option=donations">Donations you've made</a></li>
-                    <li><a href="dashboard.php?option=settings">Settings</a></li>
+                    <!-- <li><a href="dashboard.php?option=settings">Settings</a></li> -->
                 </ul>        
             </div>
             <!-- Trademarks -->
