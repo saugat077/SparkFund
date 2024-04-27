@@ -129,9 +129,21 @@ session_start(); // Start the session
     <button id="donateButton">Donate Now</button>
 
     <div class="donator-number">
-        <i class="fa-solid fa-chart-simple"></i>
-        <p>100 people just donated</p>
-    </div>
+    <i class="fa-solid fa-chart-simple"></i>
+    <?php
+    // Query to count the number of unique users who donated to the event
+    $query = "SELECT COUNT(DISTINCT user_id) AS unique_donators FROM donations WHERE funds_id = $eventId";
+    $result = mysqli_query($conn, $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        $uniqueDonators = mysqli_fetch_assoc($result)['unique_donators'];
+        echo '<p>' . $uniqueDonators . ' people just donated</p>';
+    } else {
+        echo '<p>0 people donated</p>';
+    }
+    ?>
+</div>
+
 </div>
 
 
