@@ -1,7 +1,7 @@
 window.addEventListener("scroll", function () {
   var navbar = document.getElementById("navbar");
 
-  if (window.scrollY > 100) {
+  if (window.scrollY > 300) {
     // Adjust the scroll position where you want it to become sticky
     navbar.classList.add("nav-new");
   } else {

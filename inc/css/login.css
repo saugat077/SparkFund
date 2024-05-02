@@ -17,6 +17,7 @@ body {
   box-sizing: border-box;
 }
 
+/* Main container */
 .reg-main-container {
   display: flex;
   align-items: center;
