@@ -24,7 +24,7 @@ if (isset($_GET['login']) && $_GET['login'] === "fail") {
 </head>
 <body>
    <!-- Container with two grids -->
-   <div class="container">
+   <div class="register-container">
     <!-- Shows the photo on the left side -->
     <div class="authPhoto">
       <img src="../inc/images/2.jpeg" alt="">

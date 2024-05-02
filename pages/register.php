@@ -10,18 +10,22 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <div class="reg-main-container">
   <!-- Container with two grids -->
-  <div class="container">
+  <div class="register-container">
     <!-- Shows the photo on the left side -->
-    <div class="authPhoto">
-      <img src="../inc/images/background_main.jpg" alt="">
+    <div class="reg-left">
+    <h1 class="title">Welcome to <br>
+    <span>SPARKFUND</span> </h1>
+      <!-- <img src="../inc/images/background_main.jpg" alt=""> -->
+      <div class="sign-up-link">
+       <a href="./login.php">Already have an account ?</a>
+      </div>
     </div>
     
     <!-- Signup/Register Section -->
     <div class="form-container">
       <!-- Title section -->
-      <h1 class="title">
-        Welcome to <span>SPARKFUND</span> </h1>
       <p>Create your account</p>
 
       <!-- Form section -->
@@ -35,6 +39,12 @@
         </div>
         <div id="fnameError" class="error-message"></div>
         <div id="lnameError" class="error-message"></div> 
+
+        <!-- Phone Number-->
+        <div class="input">
+          <input type="text"name="number" id="number" placeholder="Phone no"> 
+        </div>
+        <div id="numError" class="num-message"></div>
 
         <!-- Email -->
         <div class="input">
@@ -64,13 +74,12 @@
         </div>
         <!-- submit button -->
         <button type="submit" class="form-btn">Register</button>
-        <div class="sign-up-link">
-       <span ><a href="./login.php">Login</a></span>
-      </div>
+        
       </form>
       <!-- End of Right side -->
     </div>
     <!-- End of container -->
+  </div>
   </div>
 
 

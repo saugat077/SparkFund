@@ -14,71 +14,64 @@ body {
   margin: 0;
   padding: 0;
   color: var(--white);
+  box-sizing: border-box;
 }
 
-/* The body section */
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.reg-main-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
 }
 
-/* Left side display section */
-.authPhoto {
-  position: relative;
-  overflow: hidden;
-  border-top-right-radius: 140px;
-  box-shadow: 5px 4px 8px rgba(102, 193, 143, 0.5);
-  animation: changeShadowColor 5s infinite alternate;
-  transition: ease-in;
+/* The body section */
+.register-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 60%;
+  gap: 2rem;
 }
 
-@keyframes changeShadowColor {
-  0% {
-    box-shadow: 5px 4px 8px rgba(102, 193, 143, 0.5);
-  } /* Initial color */
-  50% {
-    box-shadow: 5px 4px 8px #ff5733;
-  } /* Intermediate color */
-  100% {
-    box-shadow: 5px 4px 8px #ab47bc;
-  } /* Final color */
+/* Left section contains title and button */
+.reg-left {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 1rem;
 }
 
-.authPhoto img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.reg-left h1 {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  margin: 0;
+}
+
+.reg-left .title span {
+  color: var(--accent);
+  font-size: 72px;
+  font-weight: 700;
+}
+
+.sign-up-link {
+  margin-left: 1rem;
+  font-size: 14px;
+  text-decoration: underline;
+  color: var(--accent2);
+  cursor: pointer;
+  font-weight: 800;
 }
 
 /* Right side Signup/register section*/
 .form-container {
-  background-color: var(--main);
-  padding: 80px 80px 80px 160px;
   box-sizing: border-box;
-  border-top-right-radius: 120px;
-  box-shadow: 10px 4px 8px rgba(102, 193, 143, 0.5);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.form-container .title span {
-  color: var(--accent);
-  font-size: 38px;
-  font-weight: 600;
-}
-
-.form-container h1 {
-  margin: 0px 0px 30px 0px;
-  font-size: 24px;
-  font-weight: 500;
 }
 
 .form-container p {
   margin: 0px 0px 30px 0px;
   font-size: 24px;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 /* Form section */
@@ -230,15 +223,6 @@ input {
   margin-top: 150px;
   font-size: 14px;
   color: #747474;
-}
-
-.sign-up-link {
-  margin-left: 5px;
-  font-size: 12px;
-  text-decoration: underline;
-  color: var(--accent);
-  cursor: pointer;
-  font-weight: 800;
 }
 
 .sign-up-link a:visited {
