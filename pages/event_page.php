@@ -151,20 +151,21 @@ session_start(); // Start the session
 <div id="donationModal" class="modal">
     <div class="modal-content">
         <div class="modal-content-default">
-
-        
-        <div class="close_navbar">
-            <span class="close">&times;</span>
+            <div class="close_navbar">
+                <span class="close">&times;</span>
+            </div>
+            <!-- <h2>Enter Donation Amount</h2> -->
+            <form id="donationForm" action="../backend/khalti_pay.php" method="post">
+                <!-- <input type="text" name="donationAmount" placeholder="Enter amount"> -->
+                <input type="text" name="userId" value="<?php echo $_SESSION['user_id']; ?>">
+                <input type="text" name="eventId" value="<?php echo $eventId; ?>">
+                <button type="submit">Donate Rs 1000 via Khalti</button>
+                <!-- <button type="submit">Submit</button> -->
+            </form>
         </div>
-        <h2>Enter Donation Amount</h2>
-        <input type="text" id="donationAmount" placeholder="Enter amount">
-        <button id="submitDonation">Submit</button>
-        <input type="hidden" id="userId" value="<?php echo $_SESSION['user_id']; ?>">
-        </div>
-        <p class="donation_success" style="display: none;">Donation Successful</p>
-        <p class="donation_failed" style="display: none;">Donation Failed</p>
     </div>
 </div>
+
 
 </section>
 
@@ -176,6 +177,6 @@ session_start(); // Start the session
   <script src="../inc/js/donation_prompt.js"></script>
   <!-- Include jQuery library -->
 <script src="../inc/js/ajax.js"></script>
-  <script src="../inc/js/donation.js"></script>
+  <!-- <script src="../inc/js/donation.js"></script> -->
 </body>
 </html>
