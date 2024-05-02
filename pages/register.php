@@ -42,9 +42,9 @@
 
         <!-- Phone Number-->
         <div class="input">
-          <input type="text"name="number" id="number" placeholder="Phone no"> 
+          <input type="text"name="phoneno" id="phoneno" placeholder="Phone no"> 
         </div>
-        <div id="numError" class="num-message"></div>
+        <div id="numError" class="error-message"></div>
 
         <!-- Email -->
         <div class="input">
@@ -65,7 +65,7 @@
         <div class="validation">
           <p>Passwords must meet the following requirements</p>
           <ul>
-            <li id="length">Must be 8-10 Characters Long</li> 
+            <li id="length">Must be 8-12 Characters Long</li> 
             <li id="upper">At least One Uppercase</li>
             <li id="lower">At least One Lowercase</li>
             <li id="special">At least one ( ! @ # $ % & * = ? )character</li>

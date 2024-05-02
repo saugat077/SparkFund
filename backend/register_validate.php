@@ -1,5 +1,8 @@
 <?php
 include '../db.php';
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Sanitize and validate input data
@@ -7,9 +10,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $lname = mysqli_real_escape_string($conn, $_POST['lname']); 
     $email = mysqli_real_escape_string($conn, $_POST['email']); 
     $password = mysqli_real_escape_string($conn, $_POST['password']); 
+    $phone = mysqli_real_escape_string($conn, $_POST['phoneno']);
+
 
     // Check for empty fields
-    if (empty($fname) || empty($lname) || empty($email) || empty($password)) {
+    if (empty($fname) || empty($lname) || empty($email) || empty($password) || empty($phone)) {
         header("Location: ../pages/login_confirmation.php?error=emptyfields");
         exit();
     } else {
@@ -33,13 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $hash = password_hash($password, PASSWORD_DEFAULT);
 
                 // Insert the new user into the database
-                $query = "INSERT INTO users (fname, lname, email, password) VALUES (?, ?, ?, ?)";
+                $query = "INSERT INTO users (fname, lname, email, password, number) VALUES (?, ?, ?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $query)) {
                     header("Location: ../pages/login_confirmation.php?error=sqlerror");
                     exit();
                 } else {
-                    mysqli_stmt_bind_param($stmt, "ssss", $fname, $lname, $email, $hash);
+                    mysqli_stmt_bind_param($stmt, "sssss", $fname, $lname, $email, $hash, $phone);
                     mysqli_stmt_execute($stmt);
 
                     // Registration successful, send email to the user

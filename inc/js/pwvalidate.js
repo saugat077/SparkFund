@@ -20,7 +20,7 @@ function checkPassword(data) {
   const lower = new RegExp("(?=.*[a-z])"); // checks if the string contains character from a-z
   const special = new RegExp("(?=.*[!@#$%&*=?])"); // checks if the string contains these characters
   const number = new RegExp("(?=.*[0-9])"); // checks if the string contains character from 0-9
-  const length = new RegExp("^.{8,10}$"); // checks if the length of string is between 8 and 10
+  const length = new RegExp("^.{8,12}$"); // checks if the length of string is between 8 and 10
 
   // storing in a variable after check
   const isUpperValid = upper.test(data);
