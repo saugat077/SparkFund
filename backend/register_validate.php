@@ -1,4 +1,5 @@
 <?php
+//code for displaying errors
 include '../db.php';
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -13,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $phone = mysqli_real_escape_string($conn, $_POST['phoneno']);
 
 
-    // Check for empty fields
+    // Checking for empty fields
     if (empty($fname) || empty($lname) || empty($email) || empty($password) || empty($phone)) {
         header("Location: ../pages/login_confirmation.php?error=emptyfields");
         exit();
