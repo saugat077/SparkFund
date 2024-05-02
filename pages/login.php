@@ -23,18 +23,21 @@ if (isset($_GET['login']) && $_GET['login'] === "fail") {
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+  <div class="reg-main-container"> 
    <!-- Container with two grids -->
    <div class="register-container">
-    <!-- Shows the photo on the left side -->
-    <div class="authPhoto">
-      <img src="../inc/images/2.jpeg" alt="">
+    <!-- Left Side Title Section -->
+    <div class="reg-left">
+      <h1 class="title">Login to <br><span>SPARKFUND</span> </h1>
+       <!-- Register Link -->
+       <div class="sign-up-label">
+        Don't have an account?<span class="sign-up-link"><a href="./register.php">Register</a></span>
+      </div>
     </div>
+    
 
   <!-- Signup Card-->
   <div class="form-container">
-       <h1 class="title">
-        Login to <span>SPARKFUND</span> </h1>
-
       <!-- Signup Form Section-->
       <form class="form" id="registrationForm" method="post" action="../backend/login_validate.php">
         <legend>Your account details</legend>
@@ -62,7 +65,7 @@ if (isset($_GET['login']) && $_GET['login'] === "fail") {
       </form>
 
       <!-- Google signup -->
-      <!-- <div class="buttons-container">
+      <div class="buttons-container">
         <div class="google-login-button">
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
@@ -77,19 +80,18 @@ if (isset($_GET['login']) && $_GET['login'] === "fail") {
           </svg>
           <span>Continue with Google</span>
         </div>
-      </div> -->
-
-       <!-- Register Link -->
-       <div class="sign-up-label">
-        Don't have an account?<span class="sign-up-link"><a href="./register.php">Register</a></span>
       </div>
+
 
     </div>
     
   </div>
+  </div>
   
-  <script src="../inc/js/pwvalidate.js"></script>
-  <script src="../inc/js/register_emptyfield_validate.js"></script>
-  <script src="../inc/js/toggle.js"></script>
+ <!-- Scripts -->
+ <script src="../inc/js/pwvalidate.js"></script> <!-- Password validation script -->
+  <script src="../inc/js/register_emptyfield_validate.js"></script> <!-- Empty field validation script -->
+  <script src="../inc/js/toggle.js"></script> <!-- Toggle password visibility script -->
+
 </body>
 </html>

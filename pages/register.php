@@ -4,26 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register Page</title>
+
+    <!-- File CSS link -->
     <link rel="stylesheet" href="../inc/css/login.css">
+
+    <!-- Font Awesome CDN for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="reg-main-container">
+
   <!-- Container with two grids -->
   <div class="register-container">
-    <!-- Shows the photo on the left side -->
+
+    <!-- Left Side Title Section-->
     <div class="reg-left">
     <h1 class="title">Welcome to <br>
     <span>SPARKFUND</span> </h1>
-      <!-- <img src="../inc/images/background_main.jpg" alt=""> -->
+    <!-- Register Link -->
       <div class="sign-up-link">
        <a href="./login.php">Already have an account ?</a>
       </div>
     </div>
     
-    <!-- Signup/Register Section -->
+    <!-- Right Side Signup/Register Section -->
     <div class="form-container">
       <!-- Title section -->
       <p>Create your account</p>
@@ -37,29 +43,29 @@
           <input type="text" name="fname" id="fname" placeholder="First name" style="margin-right:12px;width:50%;">
           <input type="text" name="lname" id="lname" placeholder="Last name" style="width:50%;">
         </div>
-        <div id="fnameError" class="error-message"></div>
-        <div id="lnameError" class="error-message"></div> 
+        <div id="fnameError" class="error-message"></div> <!-- Error message for first name -->
+        <div id="lnameError" class="error-message"></div>  <!-- Error message for last name -->
 
         <!-- Phone Number-->
         <div class="input">
           <input type="text"name="phoneno" id="phoneno" placeholder="Phone no"> 
         </div>
-        <div id="numError" class="error-message"></div>
+        <div id="numError" class="error-message"></div> <!-- Error message for phone number -->
 
         <!-- Email -->
         <div class="input">
           <input type="email"name="email" id="email" placeholder="Email"> 
         </div>
-        <div id="emailError" class="error-message"></div>
+        <div id="emailError" class="error-message"></div> <!-- Error message for email -->
          
         <!-- Password -->
         <div class="box">   
           <input type="password" id="password" name="password" 
           placeholder="Password"onkeyup="checkPassword(this.value)" 
-          autocomplete="current-password">
+          autocomplete="current-password"> <!-- checkPassword function is called on keyup event and sent to pwvalidate.js -->
           <span id="toggleBtn"></span>
         </div>
-        <div id="passwordError" class="error-message"></div>
+        <div id="passwordError" class="error-message"></div> <!-- Error message for password -->
       
         <!-- Validation info section -->
         <div class="validation">
@@ -72,20 +78,18 @@
             <li id="number">At least One Number</li>
           </ul>
         </div>
+
         <!-- submit button -->
         <button type="submit" class="form-btn">Register</button>
-        
       </form>
-      <!-- End of Right side -->
     </div>
-    <!-- End of container -->
   </div>
-  </div>
+</div>
 
-
-  <script src="../inc/js/pwvalidate.js"></script>
-  <script src="../inc/js/register_emptyfield_validate.js"></script>
-  <script src="../inc/js/toggle.js"></script>
+<!-- Scripts -->
+  <script src="../inc/js/pwvalidate.js"></script> <!-- Password validation script -->
+  <script src="../inc/js/register_emptyfield_validate.js"></script> <!-- Empty field validation script -->
+  <script src="../inc/js/toggle.js"></script> <!-- Toggle password visibility script -->
 
 </body>
 </html>
