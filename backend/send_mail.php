@@ -27,7 +27,7 @@ $mail->setFrom('prime.bca@email.com', 'SparkFund Team');
 
 //receiver address and name
 $mail->addAddress($receiverEmail, $receiverName);
-// $mail->addAddress($receiver, 'Aakriti');
+// $mail->addAddress($receiver, 'Saugat');
 
 
 
