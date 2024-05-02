@@ -150,19 +150,19 @@ session_start(); // Start the session
 <!-- Donation Modal -->
 <div id="donationModal" class="modal">
     <div class="modal-content">
-        <div class="modal-content-default">
+        <!-- <div class="modal-content-default"> -->
             <div class="close_navbar">
                 <span class="close">&times;</span>
             </div>
             <!-- <h2>Enter Donation Amount</h2> -->
             <form id="donationForm" action="../backend/khalti_pay.php" method="post">
                 <!-- <input type="text" name="donationAmount" placeholder="Enter amount"> -->
-                <input type="text" name="userId" value="<?php echo $_SESSION['user_id']; ?>">
-                <input type="text" name="eventId" value="<?php echo $eventId; ?>">
+                <input type="hidden" name="userId" value="<?php echo $_SESSION['user_id']; ?>">
+                <input type="hidden" name="eventId" value="<?php echo $eventId; ?>">
                 <button type="submit">Donate Rs 1000 via Khalti</button>
                 <!-- <button type="submit">Submit</button> -->
             </form>
-        </div>
+        <!-- </div> -->
     </div>
 </div>
 
