@@ -122,6 +122,10 @@ main .events > * {
   margin: 2rem;
 }
 
+.video > * {
+  margin: 2rem;
+}
+
 main .main-shadows {
   position: absolute;
   bottom: 100%;
@@ -152,7 +156,7 @@ main .main-shadows {
 
 .events .title h2,
 .video .title h2 {
-  font-weight: 500;
+  font-weight: normal;
   font-size: 22px;
   color: var(--accent);
   margin: 20px 20px 20px 0px;
@@ -163,9 +167,9 @@ main .main-shadows {
   /* padding: 20px; */
 }
 
-.events .border {
+.border {
   position: absolute;
-  width: 20%;
+  width: 15%;
   height: 2px;
   background-color: var(--accent2);
   margin-top: 1rem;

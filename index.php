@@ -24,10 +24,10 @@ session_start(); // Start the session
     // Check if the user is logged in
     if (isset($_SESSION['user_id'])) {
         // If logged in, redirect to the dashboard
-        echo '<button class="start-fund translate" data-speed="-0.2"><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund</a></button>';
+        echo '<button class="start-fund translate" data-speed="-0.1"><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund</a></button>';
     } else {
         // If not logged in, redirect to the login page
-        echo '<button class="start-fund translate" data-speed="-0.2"><a href="./pages/login.php">Start a Sparkfund</a></button>';
+        echo '<button class="start-fund translate" data-speed="-0.1"><a href="./pages/login.php">Start a Sparkfund</a></button>';
     }
     ?>
 
@@ -137,7 +137,8 @@ session_start(); // Start the session
 <!-- How Sparkfund works -->
     <section class="video">
           <div class="title">
-              <h2>How Sparkfund works</h2>
+              <h2>How Sparkfund works <div class="border"></div></h2>
+              
           </div>
           <div class="container">
           <iframe width="100%" height="515"
