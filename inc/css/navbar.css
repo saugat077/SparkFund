@@ -24,6 +24,10 @@ nav {
   z-index: 2;
 }
 
+#navbar {
+  transition: all 0.3s ease;
+}
+
 .nav-new {
   /* position: sticky; */
   width: 100%;

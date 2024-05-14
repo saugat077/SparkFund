@@ -19,17 +19,19 @@ session_start(); // Start the session
           include('./inc/components/navbar.php');
           ?>
           <!-- Spark fund button -->
-          <h3>Your home <br>for help</h3>
+          <h3 class="big-title translate" data-speed="-0.1">Your Home <br>For Help</h3>
           <?php
     // Check if the user is logged in
     if (isset($_SESSION['user_id'])) {
         // If logged in, redirect to the dashboard
-        echo '<button><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund</a></button>';
+        echo '<button class="start-fund translate" data-speed="-0.2"><a href="./pages/dashboard.php?option=fundraiser">Start a Sparkfund</a></button>';
     } else {
         // If not logged in, redirect to the login page
-        echo '<button><a href="./pages/login.php">Start a Sparkfund</a></button>';
+        echo '<button class="start-fund translate" data-speed="-0.2"><a href="./pages/login.php">Start a Sparkfund</a></button>';
     }
     ?>
+
+    <img src="./inc/images/bg5_5.jpg" class="hero-section translate" data-speed="0.2" alt="Boy with his mom">
   </header>
 
 
@@ -37,10 +39,13 @@ session_start(); // Start the session
 
 <!-- Main content area -->
   <main>
+    <div class="main-shadows"></div>
       <!-- Events section -->
       <section class="events">
   <div class="title">
-      <h2>Funding events happening right now </h2>
+      <h2>Funding events happening right now 
+        <div class="border"></div>
+      </h2>
   </div>
   <div class="container">
       <div class="parent">
@@ -160,7 +165,7 @@ session_start(); // Start the session
   </div>
 
   <!-- FAQ -->
-  <div class="main">
+  <div class="faq-main">
       <section class="faq-container">
           <h2 class="title">Fundraise for anyone</h2>
           <!-- First Question -->
@@ -206,6 +211,7 @@ session_start(); // Start the session
 
 
   <script src="./inc/js/faq.js"></script>
+  <script src="./inc/js/parallax.js"></script>
 
 
 
