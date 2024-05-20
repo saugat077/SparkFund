@@ -40,7 +40,7 @@ session_start(); // Start the session
       <!-- Events section -->
       <section class="events">
   <div class="title">
-      <h2>Funding events happening right now 
+      <h2>Funding Events Happening Right Now 
         <div class="border"></div>
       </h2>
   </div>
