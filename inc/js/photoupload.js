@@ -1,27 +1,32 @@
-const selectImage = document.querySelector(".select-image");
-const inputFile = document.querySelector("#fundFile");
-const imgArea = document.querySelector(".img-area");
+document.addEventListener("DOMContentLoaded", () => {
+  const inputFile = document.querySelector("#fundFile");
+  const imgArea = document.querySelector(".img-area");
 
-selectImage.addEventListener("click", function () {
-  inputFile.click();
-});
+  // Function to display the selected image
+  const displayImage = (image) => {
+    if (image && image.size < 2000000) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        // Remove any existing image
+        imgArea.innerHTML = "";
 
-inputFile.addEventListener("change", function () {
-  const image = this.files[0];
-  if (image.size < 20000000) {
-    const reader = new FileReader();
-    reader.onload = () => {
-      const allImg = imgArea.querySelectorAll("img");
-      allImg.forEach((item) => item.remove());
-      const imgUrl = reader.result;
-      const img = document.createElement("img");
-      img.src = imgUrl;
-      imgArea.appendChild(img);
-      imgArea.classList.add("active");
-      imgArea.dataset.img = image.name;
-    };
-    reader.readAsDataURL(image);
-  } else {
-    alert("Image size more than 2MB");
-  }
+        // Display the uploaded image
+        const imgUrl = reader.result;
+        const img = document.createElement("img");
+        img.src = imgUrl;
+        imgArea.appendChild(img);
+        imgArea.classList.add("active");
+        imgArea.dataset.img = image.name;
+      };
+      reader.readAsDataURL(image);
+    } else {
+      alert("Image size must be less than 2MB");
+    }
+  };
+
+  // Listen for change in the file input
+  inputFile.addEventListener("change", () => {
+    const image = inputFile.files[0];
+    displayImage(image);
+  });
 });

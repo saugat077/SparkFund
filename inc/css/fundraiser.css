@@ -7,20 +7,51 @@
   --primary-color: rgb(11, 78, 179);
 }
 
-.form {
+form {
   margin: 0 auto;
-  /* border: 1px solid #ccc; */
-  border-radius: 0.35rem;
-  padding: 1.5rem;
+  border-radius: 1rem;
+  padding: 1rem;
   color: var(--white);
+  display: flex;
+  flex-direction: column;
 }
 
 .text-center {
   text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 5rem;
+  grid-row-gap: 0px;
+  padding: 1rem;
+}
+
+.photoContainer {
+  width: 100%;
+  background: var(--white);
+  padding: 10px;
+  border-radius: 30px;
+  color: var(--secondary);
+  grid-area: 1 / 1 / 2 / 2;
+  display: contents;
+}
+
+.input-container {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.input-group {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Progressbar */
-.progressbar {
+/* .progressbar {
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -75,18 +106,14 @@
 }
 
 /* Form  Step*/
-.form-step {
+/* .form-step {
   display: none;
   transform-origin: top;
   animation: animate 0.5s;
 }
-
+*/
 .form-step-active {
   display: block;
-}
-
-.input-group {
-  margin: 2rem 0;
 }
 
 @keyframes animate {
@@ -125,14 +152,7 @@ textarea {
 }
 
 /* Photoupload */
-.photoContainer {
-  max-width: 1000px;
-  width: 100%;
-  background: var(--white);
-  padding: 10px;
-  border-radius: 30px;
-  color: var(--secondary);
-}
+
 .img-area {
   position: relative;
   width: 100%;
@@ -215,7 +235,7 @@ textarea {
   display: flex;
   gap: 1.5rem;
   justify-content: flex-end;
-  margin-top: 5rem;
+  margin-top: 2rem;
 }
 
 .btn {
