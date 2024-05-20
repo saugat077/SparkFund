@@ -167,6 +167,12 @@ main .event-donate {
 .donation-raised h5 {
   font-size: 14px;
   margin: 5px 0px;
+  font-weight: 500;
+}
+
+.donation-raised span {
+  font-size: 24px;
+  /* margin: 5px 0px; */
 }
 
 .donation-progress-bar {
@@ -197,6 +203,17 @@ main .event-donate {
   margin: 10px 0px;
   font-size: 16px;
   font-weight: 600;
+}
+
+.donator-number {
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.donator-number i {
+  margin-right: 1rem;
+  color: var(--accent2);
 }
 
 /* Hide the modal by default */

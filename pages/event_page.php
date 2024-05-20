@@ -115,7 +115,7 @@ session_start(); // Start the session
         if ($totalDonations == 0) {
             echo '<h5>NRs 0 raised of NRs ' . $fundTarget . ' goal.</h5>';
         } else {
-            echo '<h5>NRs ' . $totalDonations . ' raised of NRs ' . $fundTarget . ' goal.</h5>';
+            echo '<h5> <span> NRs ' . $totalDonations . ' </span> raised of NRs ' . $fundTarget . ' goal.</h5>';
         }
         ?>
     </div>
@@ -127,6 +127,9 @@ session_start(); // Start the session
     </div>
 
     <button id="donateButton">Donate Now</button>
+    <!-- Add this button near the event details section -->
+<button class="copy-button" onclick="copyLink()">Share</button>
+
 
     <div class="donator-number">
     <i class="fa-solid fa-chart-simple"></i>
@@ -178,5 +181,6 @@ session_start(); // Start the session
   <!-- Include jQuery library -->
 <script src="../inc/js/ajax.js"></script>
   <!-- <script src="../inc/js/donation.js"></script> -->
+  <script src="../inc/js/copylink.js"></script>
 </body>
 </html>
