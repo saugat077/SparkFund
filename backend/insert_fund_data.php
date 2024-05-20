@@ -10,16 +10,11 @@ ini_set('display_errors', 1);
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get data from form submission
-    $fundTitle = $_POST["fundTitleClone"];
-    $fundTarget = $_POST["fundTargetClone"];
-    $fundStory = $_POST["fundStoryClone"];
-    $fundFile = $_FILES["fundFileClone"]["name"];
-    $fundFileTemp = $_FILES["fundFileClone"]["tmp_name"];
-
-    // Initialize event variables
-    $eventTitle = $fundTitle;
-    $eventDescription = $fundStory;
-    $eventTarget = $fundTarget;
+    $fundTitle = $_POST["fundTitle"];
+    $fundTarget = $_POST["fundTarget"];
+    $fundStory = $_POST["fundStory"];
+    $fundFile = $_FILES["fundFile"]["name"];
+    $fundFileTemp = $_FILES["fundFile"]["tmp_name"];
 
    // Check if user is logged in and retrieve user information from the database
 if(isset($_SESSION['user_id'])) {
