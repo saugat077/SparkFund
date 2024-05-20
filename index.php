@@ -34,9 +34,6 @@ session_start(); // Start the session
     <img src="./inc/images/bg5_5.jpg" class="hero-section translate" data-speed="0.2" alt="Boy with his mom">
   </header>
 
-
-
-
 <!-- Main content area -->
   <main>
     <div class="main-shadows"></div>
@@ -47,7 +44,7 @@ session_start(); // Start the session
         <div class="border"></div>
       </h2>
   </div>
-  <div class="container">
+  <div class="events-container">
       <div class="parent">
           <?php
           // Include the database configuration file
@@ -112,9 +109,9 @@ session_start(); // Start the session
 
                   // Display the total donations raised and the progress bar
                   if ($totalDonations == 0) {
-                    echo '<p style="color:var(--white); font-size:12px;">NRs 0 raised.</p>';
+                    echo '<p>NRs 0 raised.</p>';
                 } else {
-                    echo '<p style="color:var(--white); font-size:12px;">NRs' . $totalDonations . ' raised </p>';
+                    echo '<p>NRs ' . $totalDonations . ' raised </p>';
                 }
 
                   echo '</a>'; // Close the anchor tag
@@ -131,8 +128,6 @@ session_start(); // Start the session
       </div>
   </div>
 </section>
-
-
 
 <!-- How Sparkfund works -->
     <section class="video">
@@ -151,7 +146,6 @@ session_start(); // Start the session
           </div>
       </section>
   </main>
-
 
   <div class="banner">
       <div class="text-container">
@@ -208,20 +202,8 @@ session_start(); // Start the session
       </section>
   </div>
 
-
-
-
   <script src="./inc/js/faq.js"></script>
   <script src="./inc/js/parallax.js"></script>
 
-
-
-
-
 </body>
 </html>
-
-
-
-
-
