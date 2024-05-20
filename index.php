@@ -112,9 +112,9 @@ session_start(); // Start the session
 
                   // Display the total donations raised and the progress bar
                   if ($totalDonations == 0) {
-                    echo '<p style="color:var(--white); font-size:12px;">$0 raised.</p>';
+                    echo '<p style="color:var(--white); font-size:12px;">NRs 0 raised.</p>';
                 } else {
-                    echo '<p style="color:var(--white); font-size:12px;">$' . $totalDonations . ' raised </p>';
+                    echo '<p style="color:var(--white); font-size:12px;">NRs' . $totalDonations . ' raised </p>';
                 }
 
                   echo '</a>'; // Close the anchor tag

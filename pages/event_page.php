@@ -113,9 +113,9 @@ session_start(); // Start the session
         <?php
         // Display the total donations raised
         if ($totalDonations == 0) {
-            echo '<h5>$0 raised of $' . $fundTarget . ' goal.</h5>';
+            echo '<h5>NRs 0 raised of NRs ' . $fundTarget . ' goal.</h5>';
         } else {
-            echo '<h5>$' . $totalDonations . ' raised of $' . $fundTarget . ' goal.</h5>';
+            echo '<h5>NRs ' . $totalDonations . ' raised of NRs ' . $fundTarget . ' goal.</h5>';
         }
         ?>
     </div>
