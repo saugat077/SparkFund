@@ -116,6 +116,10 @@ main {
   position: relative;
 }
 
+/* section {
+  height: 100vh;
+} */
+
 /* createes a seamless gradient */
 main .main-shadows {
   position: absolute;
@@ -133,14 +137,16 @@ main .title {
 
 .events,
 .video,
-.banner .text-container {
-  width: 64%;
+.banner .text-container,
+.main-carousel {
+  width: 75%;
   padding: 1rem;
   margin: 3rem 0rem;
 }
 
 .events .title h2,
-.video .title h2 {
+.video .title h2,
+.main-carousel .title h2 {
   font-weight: 500;
   font-size: 1.5rem;
   color: var(--accent);
@@ -155,7 +161,8 @@ main .title {
 }
 
 /* Shows the events  */
-.events-container {
+.events-container,
+.featured-container {
   padding: 1rem;
 }
 

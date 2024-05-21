@@ -129,8 +129,21 @@ session_start(); // Start the session
   </div>
 </section>
 
+<!-- Carousel -->
+<section class="main-carousel">
+      <div class="title">
+              <h2>Featured Topics <div class="border"></div></h2>
+              
+          </div>
+          <div class="featured-container">
+          <?php
+        include('./inc/components/carousel.html');
+        ?>
+        </div>
+      </section>
+
 <!-- How Sparkfund works -->
-    <section class="video">
+    <!-- <section class="video">
           <div class="title">
               <h2>How Sparkfund works <div class="border"></div></h2>
               
@@ -144,7 +157,9 @@ session_start(); // Start the session
               >
           </iframe>
           </div>
-      </section>
+      </section> -->
+
+
   </main>
 
   <div class="banner">

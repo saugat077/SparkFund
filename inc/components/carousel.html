@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./inc/css/carousel.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+  </head>
+  <body>
+    <section class="game-section">
+      <div class="owl-carousel custom-carousel owl-theme">
+        <!-- Item 1 -->
+        <div
+          class="item active"
+          style="background-image: url('./inc/images/happy_dog.webp')"
+        >
+          <div class="item-desc">
+            <h3>Ben Found Home</h3>
+            <p>
+              Ben was a stray dog who was found on the street. Sparkfund helped
+              us to raise funds for his treatment and shelter. Now Ben has found
+              a loving home.
+            </p>
+          </div>
+        </div>
+        <!-- Item 2 -->
+        <div
+          class="item"
+          style="background-image: url('./inc/images/startup.jpg')"
+        >
+          <div class="item-desc">
+            <h3>Nepali Startup</h3>
+            <p>
+              Sparkfund helped provide a robust platform for our startup ( Netra
+              Nepal) by offering a fundraising platform. The platform enabled
+              the startup to scale its operations and reach a wider audience in
+              its growth journey.
+            </p>
+          </div>
+        </div>
+        <!-- Item 3 -->
+        <div
+          class="item"
+          style="background-image: url('./inc/images/plantation.jpg')"
+        >
+          <div class="item-desc">
+            <h3>Tree Plantation</h3>
+            <p>
+              Successfully raised funds to buy seeds and seedlings for tree
+              plantation through Sparkfund. The platform helped us to reach out
+              to a wider audience and raise funds for our cause.
+            </p>
+          </div>
+        </div>
+        <!-- Item 4 -->
+        <div
+          class="item"
+          style="background-image: url('./inc/images/culturefest.avif')"
+        >
+          <div class="item-desc">
+            <h3>Event Successful</h3>
+            <p>
+              When the event was in need of funds, Sparkfund helped us to raise
+              the required funds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 5 -->
+        <div
+          class="item"
+          style="background-image: url('./inc/images/college_teen.webp')"
+        >
+          <div class="item-desc">
+            <h3>College Debt Clear</h3>
+            <p>
+              Sparkfund helped us to raise funds to clear the college debt of
+              our friend. The platform enabled us to reach out to a wider
+              audience and raise funds for our cause.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+      $(document).ready(function () {
+        $(".custom-carousel").owlCarousel({
+          autoWidth: true,
+          loop: true,
+        });
+
+        $(".custom-carousel .item").click(function () {
+          $(".custom-carousel .item").not($(this)).removeClass("active");
+          $(this).toggleClass("active");
+        });
+      });
+    </script>
+  </body>
+</html>
