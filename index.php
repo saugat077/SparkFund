@@ -142,23 +142,6 @@ session_start(); // Start the session
         </div>
       </section>
 
-<!-- How Sparkfund works -->
-    <!-- <section class="video">
-          <div class="title">
-              <h2>How Sparkfund works <div class="border"></div></h2>
-              
-          </div>
-          <div class="container">
-          <iframe width="100%" height="515"
-              src="https://www.youtube.com/embed/zcruIov45bI?si=6YFa4t42TGzrUNrD"
-              title="YouTube video player" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media;
-              gyroscope; picture-in-picture; web-share"
-              >
-          </iframe>
-          </div>
-      </section> -->
-
 
   </main>
 
