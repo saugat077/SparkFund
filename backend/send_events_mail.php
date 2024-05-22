@@ -61,10 +61,10 @@ $mail->Body = "<html>
   </h4>
   <p>
     ======= Event Details ======= <br /> <br />
-    <b>Event Title:</b> $eventTitle <br />
-    <b>Event Description:</b> $eventDescription <br />
+    <b>Event Title:</b> $fundTitle <br />
+    <b>Event Description:</b> $fundStory <br />
     <b>Event Creator:</b> $creatorName <br />
-    <b>Event Target Amount: </b>$eventTarget <br />
+    <b>Event Target Amount: </b>$fundTarget <br />
   </p>
   <p style=\"font-weight: 500\">
     Best regards,<br />
