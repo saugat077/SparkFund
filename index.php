@@ -9,12 +9,13 @@ session_start(); // Start the session
   <title>Sparkfund</title>
   <link rel="stylesheet" href="./inc/css/style.css">
   <link rel="stylesheet" href="./inc/css/faq.css">
+  <link rel="stylesheet" href="./inc/css/footer.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
   integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
   <!-- Hero section -->
-  <header>
+  <header id="Home">
       <!-- Navbar -->
           <?php
           include('./inc/components/navbar.php');
@@ -40,7 +41,7 @@ session_start(); // Start the session
     <div class="main-shadows"></div>
       <!-- Events section -->
       <section class="events">
-  <div class="title">
+  <div class="title" id="Happening">
       <h2>Funding Events Happening Right Now 
         <div class="border"></div>
       </h2>
@@ -131,7 +132,7 @@ session_start(); // Start the session
 </section>
 
 <!-- Carousel -->
-<section class="main-carousel">
+<section class="main-carousel" id="Featured">
       <div class="title">
               <h2>Featured Topics <div class="border"></div></h2>
               
@@ -159,10 +160,17 @@ session_start(); // Start the session
   </div>
 
   <!-- FAQ -->
-  <div class="faq-main">
+  <div class="faq-main" id="FAQ">
       <?php
         include('./inc/components/faq.html');
         ?>
+  </div>
+
+  <!-- Footer -->
+  <div>
+    <?php
+    include('./inc/components/footer.html');
+    ?>
   </div>
 
   <script src="./inc/js/faq.js"></script>
