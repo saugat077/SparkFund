@@ -8,6 +8,7 @@ session_start(); // Start the session
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sparkfund</title>
   <link rel="stylesheet" href="./inc/css/style.css">
+  <link rel="stylesheet" href="./inc/css/faq.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
   integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
@@ -159,45 +160,9 @@ session_start(); // Start the session
 
   <!-- FAQ -->
   <div class="faq-main">
-      <section class="faq-container">
-          <h2 class="title">Fundraise for anyone</h2>
-          <!-- First Question -->
-          <div class="faq">
-              <div class="question">
-                  <h3>Yourself</h3>
-                  <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <div class="answer">
-                  <p>
-                      Funds are delivered to your bank account for your own use.
-                  </p>
-              </div>
-          </div>
-          <!-- Second Question -->
-          <div class="faq">
-              <div class="question">
-                  <h3>Friends and family</h3>
-                  <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <div class="answer">
-                  <p>
-                      You'll invite a beneficiary to receive funds or distribute them yourself.
-                  </p>
-              </div>
-          </div>
-          <!-- Third Question -->
-          <div class="faq">
-              <div class="question">
-                  <h3>Charity</h3>
-                  <i class="fa-solid fa-chevron-down"></i>
-              </div>
-              <div class="answer">
-                  <p>
-                      Funds are delivered to your chosen nonprofit for you.
-                  </p>
-              </div>
-          </div>
-      </section>
+      <?php
+        include('./inc/components/faq.html');
+        ?>
   </div>
 
   <script src="./inc/js/faq.js"></script>
