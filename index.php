@@ -40,6 +40,7 @@
   <!-- Main Section which contains everything-->
   <main>
 
+
     <!-- Shadow Overlay between image and div -->
     <div class="main-shadows"></div>
 
@@ -62,6 +63,7 @@
       </div>
     </section>
 
+
     <!-- Banner -->
     <div class="banner">
       <div class="text-container">
@@ -74,11 +76,14 @@
       </div>
     </div>
 
+
     <!-- FAQ -->
     <div class="faq-main" id="FAQ">
       <!-- FAQ Imported -->
       <?php include('./inc/components/faq.html'); ?>
     </div>
+
+    
   </main>
 
   <!-- Footer Section-->

@@ -1,6 +1,61 @@
 <?php
 session_start(); // Start the session
+
+// Include the database configuration file
+include_once "../db.php";
+
+// Check if the 'id' parameter is set in the URL
+if(isset($_GET['id'])) {
+    // Get the event ID from the URL parameter
+    $eventId = $_GET['id'];
+
+    // Prepare and execute the SQL query to fetch event details
+    $query = "SELECT funds.*, users.fname AS creator_name
+              FROM funds
+              LEFT JOIN users ON funds.user_id = users.id
+              WHERE fund_id = $eventId";
+    $result = mysqli_query($conn, $query);
+
+    // Check if the query was successful and if event details were found
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Fetch event details from the database
+        $eventDetails = mysqli_fetch_assoc($result);
+
+        // Store event details in variables
+        $eventTitle = $eventDetails['fund_title'];
+        $eventCover = $eventDetails['fund_cover'];
+        $eventDescription = $eventDetails['fund_story']; 
+        $creatorName = $eventDetails['creator_name']; // Get the creator's name
+
+        // Fetch the total sum of donations for the event
+        $totalDonations = 0;
+        $query = "SELECT SUM(amount) AS total_donations FROM donations WHERE funds_id = $eventId";
+        $result = mysqli_query($conn, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $totalDonations = mysqli_fetch_assoc($result)['total_donations'];
+        }
+
+        // Fetch the fund target from the database
+        $query = "SELECT fund_target FROM funds WHERE fund_id = $eventId";
+        $result = mysqli_query($conn, $query);
+        if ($result && mysqli_num_rows($result) > 0) {
+            $fundTarget = mysqli_fetch_assoc($result)['fund_target'];
+        } else {
+            $fundTarget = 0; // Default value if no fund target is found
+        }
+
+        // Check if the user is logged in
+        $isLoggedIn = isset($_SESSION['user_id']);
+    } else {
+        // If event details were not found, display a message
+        echo '<p style="color: white;">Event details not found.</p>';
+    }
+} else {
+    // If 'id' parameter is not set in the URL, display a message
+    echo '<p style="color: white;">Event ID not provided.</p>';
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,33 +76,7 @@ session_start(); // Start the session
   </header>
 
   <main>
-  <?php
-    // Include the database configuration file
-    include_once "../db.php";
-
-    // Check if the 'id' parameter is set in the URL
-    if(isset($_GET['id'])) {
-        // Get the event ID from the URL parameter
-        $eventId = $_GET['id'];
-
-        // Prepare and execute the SQL query to fetch event details
-        $query = "SELECT funds.*, users.fname AS creator_name
-                  FROM funds
-                  LEFT JOIN users ON funds.user_id = users.id
-                  WHERE fund_id = $eventId";
-        $result = mysqli_query($conn, $query);
-
-        // Check if the query was successful and if event details were found
-        if ($result && mysqli_num_rows($result) > 0) {
-            // Fetch event details from the database
-            $eventDetails = mysqli_fetch_assoc($result);
-
-            // Store event details in variables
-            $eventTitle = $eventDetails['fund_title'];
-            $eventCover = $eventDetails['fund_cover'];
-            $eventDescription = $eventDetails['fund_story']; 
-            $creatorName = $eventDetails['creator_name']; // Get the creator's name
-?>
+<?php if(isset($eventTitle)): ?>
 <section class="event-details-section">
     <!-- Event Title fetched from the database -->
     <div class="event-title">
@@ -69,118 +98,60 @@ session_start(); // Start the session
             </div>
         </div>
 
+        <!-- Right side that shows donation div -->
+        <div class="event-donate" id="donationContainer">
+            <div class="donation-raised">
+                <?php if ($totalDonations == 0): ?>
+                    <h5><span>NRs 0 </span>raised of NRs <?php echo $fundTarget; ?> goal.</h5>
+                <?php else: ?>
+                    <h5> <span> NRs <?php echo $totalDonations; ?> </span> raised of NRs <?php echo $fundTarget; ?> goal.</h5>
+                <?php endif; ?>
+            </div>
 
-        <?php
-        } else {
-            // If event details were not found, display a message
-            echo '<p style="color: white;">Event details not found.</p>';
-        }
-    } else {
-        // If 'id' parameter is not set in the URL, display a message
-        echo '<p style="color: white;">Event ID not provided.</p>';
-    }
+            <div class="donation-progress-bar">
+                <div class="progress-bar-inner" style="width: <?php echo ($totalDonations / $fundTarget) * 100; ?>%;">
+                </div>
+            </div>
 
-    
-?>
+            <button id="donateButton">Donate Now</button>
+            <!-- Add this button near the event details section -->
+            <button class="copy-button" onclick="copyLink()">Share</button>
 
+            <div class="donator-number">
+                <i class="fa-solid fa-chart-simple"></i>
+                <p><?php echo isset($uniqueDonators) ? $uniqueDonators : '0'; ?> people just donated</p>
+            </div>
+        </div>
 
+        <!-- Donation Modal -->
+        <div id="donationModal" class="modal">
+            <div class="modal-content">
+                <div class="close_navbar">
+                    <span class="close">&times;</span>
+                </div>
+                <form id="donationForm" action="../backend/khalti_pay.php" method="post">
+                    <input type="text" name="donationAmount" placeholder="Enter amount">
+                    <input type="hidden" name="userId" value="<?php echo $_SESSION['user_id']; ?>">
+                    <input type="hidden" name="eventId" value="<?php echo $eventId; ?>">
+                    <input type="hidden" id="isLoggedIn" value="<?php echo $isLoggedIn ? 'true' : 'false'; ?>">
+                    <button type="submit">Donate</button>
 
-<!-- Right side that shows donation div -->
-<div class="event-donate" id="donationContainer">
-    <?php
-    // Include the database configuration file
-    include_once "../db.php";
-
-    // Fetch the total sum of donations for the event
-    $totalDonations = 0;
-    $query = "SELECT SUM(amount) AS total_donations FROM donations WHERE funds_id = $eventId";
-    $result = mysqli_query($conn, $query);
-    if ($result && mysqli_num_rows($result) > 0) {
-        $totalDonations = mysqli_fetch_assoc($result)['total_donations'];
-    }
-
-    // Fetch the fund target from the database
-    $query = "SELECT fund_target FROM funds WHERE fund_id = $eventId";
-    $result = mysqli_query($conn, $query);
-    if ($result && mysqli_num_rows($result) > 0) {
-        $fundTarget = mysqli_fetch_assoc($result)['fund_target'];
-    } else {
-        $fundTarget = 0; // Default value if no fund target is found
-    }
-    ?>
-
-    <div class="donation-raised">
-        <?php
-        // Display the total donations raised
-        if ($totalDonations == 0) {
-            echo '<h5><span>NRs 0 </span>raised of NRs ' . $fundTarget . ' goal.</h5>';
-        } else {
-            echo '<h5> <span> NRs ' . $totalDonations . ' </span> raised of NRs ' . $fundTarget . ' goal.</h5>';
-        }
-        ?>
-    </div>
-
-    <div class="donation-progress-bar">
-        <div class="progress-bar-inner" style="width: <?php echo ($totalDonations / $fundTarget) * 100; ?>%;">
-            <!-- <p>Fundraising Progress</p> -->
+                </form>
+            </div>
         </div>
     </div>
-
-    <button id="donateButton">Donate Now</button>
-    <!-- Add this button near the event details section -->
-<button class="copy-button" onclick="copyLink()">Share</button>
-
-
-    <div class="donator-number">
-    <i class="fa-solid fa-chart-simple"></i>
-    <?php
-    // Query to count the number of unique users who donated to the event
-    $query = "SELECT COUNT(DISTINCT user_id) AS unique_donators FROM donations WHERE funds_id = $eventId";
-    $result = mysqli_query($conn, $query);
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $uniqueDonators = mysqli_fetch_assoc($result)['unique_donators'];
-        echo '<p>' . $uniqueDonators . ' people just donated</p>';
-    } else {
-        echo '<p>0 people donated</p>';
-    }
-    ?>
-</div>
-
-</div>
-
-
-<!-- Donation Modal -->
-<div id="donationModal" class="modal">
-    <div class="modal-content">
-        <!-- <div class="modal-content-default"> -->
-            <div class="close_navbar">
-                <span class="close">&times;</span>
-            </div>
-            <!-- <h2>Enter Donation Amount</h2> -->
-            <form id="donationForm" action="../backend/khalti_pay.php" method="post">
-                <input type="text" name="donationAmount" placeholder="Enter amount">
-                <input type="hidden" name="userId" value="<?php echo $_SESSION['user_id']; ?>">
-                <input type="hidden" name="eventId" value="<?php echo $eventId; ?>">
-                <button type="submit">Donate</button>
-                <!-- <button type="submit">Submit</button> -->
-            </form>
-        <!-- </div> -->
-    </div>
-</div>
-
-
 </section>
+<?php endif; ?>
 
+<!-- Call the JavaScript function and pass the isLoggedIn variable -->
+<script>
+    handleDonateButtonClick(<?php echo $isLoggedIn ? 'true' : 'false'; ?>);
+</script>
 
-<!-- Section ends here -->
-
-  </main>
-
-  <script src="../inc/js/donation_prompt.js"></script>
-  <!-- Include jQuery library -->
+<script src="../inc/js/donation_prompt.js"></script>
+<!-- Include jQuery library -->
 <script src="../inc/js/ajax.js"></script>
-  <!-- <script src="../inc/js/donation.js"></script> -->
-  <script src="../inc/js/copylink.js"></script>
+<!-- <script src="../inc/js/donation.js"></script> -->
+<script src="../inc/js/copylink.js"></script>
 </body>
 </html>
