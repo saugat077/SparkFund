@@ -1,19 +1,11 @@
 @charset "utf-8";
 
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-* {
-  margin: 0px;
-  padding: 0px;
-}
-body {
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-}
 
 .clear {
   clear: both;
 }
-img {
+.game-section img {
   max-width: 100%;
   border: 0px;
 }
@@ -36,12 +28,12 @@ a:hover {
   outline: none;
 }
 
-h3 {
+.game-section h3 {
   margin: 0 0 10px;
   font-size: 28px;
   line-height: 36px;
 }
-button {
+.game-section button {
   outline: none !important;
 }
 /******* Common Element CSS End *********/
