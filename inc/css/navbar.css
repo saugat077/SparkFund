@@ -118,8 +118,8 @@ nav {
   content: "\f2bd"; /* Font Awesome caret down icon */
   font-family: fontAwesome;
   margin-right: 10px;
-  height: 60px;
-  width: 60px;
+  font-size: 1.1rem;
+  color: var(--accent);
 }
 
 .dropdown::after {
