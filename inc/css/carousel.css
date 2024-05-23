@@ -36,15 +36,6 @@ a:hover {
   outline: none;
 }
 
-h2 {
-  margin-bottom: 48px;
-  padding-bottom: 16px;
-  font-size: 20px;
-  line-height: 28px;
-  font-weight: 700;
-  position: relative;
-  /* text-transform: capitalize; */
-}
 h3 {
   margin: 0 0 10px;
   font-size: 28px;

@@ -169,7 +169,7 @@ main .title {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 0.2rem;
+  grid-gap: 1rem;
 }
 
 .parent > * {
@@ -294,6 +294,39 @@ main .event-header h5 {
   font-size: 2rem;
   font-weight: 500;
   line-height: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-in, transform 0.8s ease-in;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Initial hidden state for animation */
+.banner .text-container .banner-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.5s ease-in-out;
+}
+
+/* Animated state */
+.banner .text-container .banner-text.animate {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 main .video > * {
