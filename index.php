@@ -7,11 +7,11 @@
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./inc/css/style.css"> <!-- Main stylesheet -->
-  <link rel="stylesheet" href="./inc/css/navbar.css"> <!-- Navbar stylesheet -->
+  <link rel="stylesheet" href="./inc/css/Navbar.css"> <!-- Navbar stylesheet -->
   <link rel="stylesheet" href="./inc/css/EventsSection.css"> <!-- Events Section stylesheet -->
   <link rel="stylesheet" href="./inc/css/FeaturedSection.css"> <!-- Featured Section stylesheet -->
   <link rel="stylesheet" href="./inc/css/faq.css"> <!-- FAQ stylesheet -->
-  <link rel="stylesheet" href="./inc/css/footer.css"> <!-- Footer stylesheet -->
+  <link rel="stylesheet" href="./inc/css/Footer.css"> <!-- Footer stylesheet -->
 
   <!-- Font awesome CDN for using icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -89,14 +89,14 @@
 
   <!-- Footer Section-->
   <div>
-    <?php include('./inc/components/footer.html'); ?>
+    <?php include('./inc/components/Footer.html'); ?>
   </div>
 
   
   <!-- Scripts -->
-  <script src="./inc/js/navbar.js"></script> <!-- Navbar script -->
-  <script src="./inc/js/parallax.js"></script> <!-- Parallax script -->
-  <script src="./inc/js/animation.js"></script> <!-- Animation script -->
+  <script src="./inc/js/navbar.js"></script> <!-- Navbar script for sticky nav-->
+  <script src="./inc/js/ParallaxHero.js"></script> <!-- Parallax script -->
+  <script src="./inc/js/BannerAnimate.js"></script> <!-- Animation script for banner-->
   <script src="./inc/js/faq.js"></script>  <!-- FAQ script -->
 </body>
 </html>
