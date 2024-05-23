@@ -139,12 +139,13 @@ nav {
 .dropdown-content {
   display: none;
   position: absolute;
-  width: 120px;
-  box-shadow: 0px 0px 12px red; /* Update this shadow color */
+  width: 180px;
+  box-shadow: 0px 0px 12px red;
   z-index: 1;
-  margin-top: 10px;
+  margin-top: 2rem;
+  right: 0px;
   background-color: var(--white);
-  border-radius: 20px;
+  border-radius: 2rem;
   text-align: center;
 }
 
