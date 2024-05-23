@@ -8,6 +8,7 @@
   <!-- Stylesheets -->
   <link rel="stylesheet" href="./inc/css/style.css"> <!-- Main stylesheet -->
   <link rel="stylesheet" href="./inc/css/navbar.css"> <!-- Navbar stylesheet -->
+  <link rel="stylesheet" href="./inc/css/EventsSection.css"> <!-- Events Section stylesheet -->
   <link rel="stylesheet" href="./inc/css/carousel.css"> <!-- Carousel stylesheet -->
   <link rel="stylesheet" href="./inc/css/faq.css"> <!-- FAQ stylesheet -->
   <link rel="stylesheet" href="./inc/css/footer.css"> <!-- Footer stylesheet -->
@@ -47,7 +48,7 @@
 
     <!-- Events Section that displays Recent 6 events -->
     <section class="events">
-      <?php include('./inc/components/EventSection.php'); ?>
+      <?php include('./inc/components/EventsSection.php'); ?>
     </section>
 
 
@@ -83,7 +84,7 @@
       <?php include('./inc/components/faq.html'); ?>
     </div>
 
-    
+
   </main>
 
   <!-- Footer Section-->
