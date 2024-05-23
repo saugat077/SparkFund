@@ -23,7 +23,7 @@ a:hover {
   width: 100%;
   text-align: left;
   font: bold 16px sans-serif;
-  padding: 50px 0px 0px 0px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -40,8 +40,18 @@ a:hover {
   justify-content: space-between;
 }
 
-.footer-left,
-.footer-center,
+.footer-left {
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-center {
+  width: 30%;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .footer-right {
   width: 30%;
   display: flex;
