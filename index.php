@@ -60,15 +60,12 @@ session_start(); // Start the session
             ?>
             </div>
     </section>
-  </main>
 
-
-
-  <!-- Banner section -->
+    <!-- Banner section -->
   <div class="banner">
       <div class="text-container">
       <h2>
-          We've got you covered. <br>
+          <strong>We've got you covered. </strong><br>
           <br>
           Sparkfund is a trusted leader in online fundraising.
            With simple pricing and a team of Trust & Safety experts in your corner,
@@ -76,6 +73,12 @@ session_start(); // Start the session
       </h2>
       </div>
   </div>
+
+  </main>
+
+
+
+  
 
 
 

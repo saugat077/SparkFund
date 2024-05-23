@@ -22,7 +22,7 @@
                     FROM funds
                     LEFT JOIN users ON funds.user_id = users.id
                     ORDER BY funds.fund_id DESC
-                    LIMIT 5";
+                    LIMIT 6";
 
           $result = mysqli_query($conn, $query);
 

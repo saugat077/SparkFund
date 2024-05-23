@@ -39,7 +39,7 @@
           <div class="item-desc">
             <h3>Nepali Startup</h3>
             <p>
-              Sparkfund helped provide a robust platform for our startup ( Netra
+              Sparkfund helped provide a robust platform for our startup (Netra
               Nepal) by offering a fundraising platform. The platform enabled
               the startup to scale its operations and reach a wider audience in
               its growth journey.
@@ -73,7 +73,6 @@
             </p>
           </div>
         </div>
-
         <!-- Item 5 -->
         <div
           class="item"
@@ -103,10 +102,12 @@
           loop: true,
         });
 
-        $(".custom-carousel .item").click(function () {
+        function activateItem() {
           $(".custom-carousel .item").not($(this)).removeClass("active");
-          $(this).toggleClass("active");
-        });
+          $(this).addClass("active");
+        }
+
+        $(".custom-carousel .item").on("mouseenter click", activateItem);
       });
     </script>
   </body>

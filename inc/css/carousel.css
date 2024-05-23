@@ -43,7 +43,7 @@ h2 {
   line-height: 28px;
   font-weight: 700;
   position: relative;
-  text-transform: capitalize;
+  /* text-transform: capitalize; */
 }
 h3 {
   margin: 0 0 10px;
