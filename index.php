@@ -30,9 +30,12 @@
           <img src="./inc/images/bg5_5.jpg" class="hero-section translate" data-speed="0.2" alt="Boy with his mom">
   </header>
 
+
   <!-- Main content area -->
   <main>
+<!-- Shadow Overlay -->
     <div class="main-shadows"></div>
+
       <!-- Events section -->
       <section class="events">
         <?php include('./inc/components/EventSection.php'); ?>
@@ -60,12 +63,12 @@
       </div>
     </div>
 
+    <!-- FAQ -->
+    <div class="faq-main" id="FAQ">
+      <?php include('./inc/components/faq.html'); ?>
+    </div>
   </main>
 
-  <!-- FAQ -->
-  <div class="faq-main" id="FAQ">
-    <?php include('./inc/components/faq.html'); ?>
-  </div>
 
   <!-- Footer Section-->
   <div>
