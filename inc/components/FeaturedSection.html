@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="./inc/css/carousel.css" /> -->
+
+    <!-- Links to Owl Carousel CDN -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
@@ -15,7 +16,7 @@
     />
   </head>
   <body>
-    <section class="game-section">
+    <section class="feature-section">
       <div class="owl-carousel custom-carousel owl-theme">
         <!-- Item 1 -->
         <div
@@ -97,16 +98,22 @@
 
     <script>
       $(document).ready(function () {
+        // Initialize Owl Carousel
         $(".custom-carousel").owlCarousel({
           autoWidth: true,
           loop: true,
+          autoplay: true,
+          autoplaySpeed: 1000,
+          autoplayHoverPause: true,
         });
 
+        // Function to activate the current carousel item
         function activateItem() {
           $(".custom-carousel .item").not($(this)).removeClass("active");
           $(this).addClass("active");
         }
 
+        // Activate the item on mouseenter and click events
         $(".custom-carousel .item").on("mouseenter click", activateItem);
       });
     </script>

@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="./inc/css/style.css"> <!-- Main stylesheet -->
   <link rel="stylesheet" href="./inc/css/navbar.css"> <!-- Navbar stylesheet -->
   <link rel="stylesheet" href="./inc/css/EventsSection.css"> <!-- Events Section stylesheet -->
-  <link rel="stylesheet" href="./inc/css/carousel.css"> <!-- Carousel stylesheet -->
+  <link rel="stylesheet" href="./inc/css/FeaturedSection.css"> <!-- Featured Section stylesheet -->
   <link rel="stylesheet" href="./inc/css/faq.css"> <!-- FAQ stylesheet -->
   <link rel="stylesheet" href="./inc/css/footer.css"> <!-- Footer stylesheet -->
 
@@ -60,7 +60,7 @@
       </div>
       <!-- Import Component -->
       <div class="featured-container">
-        <?php include('./inc/components/carousel.html'); ?>
+        <?php include('./inc/components/FeaturedSection.html'); ?>
       </div>
     </section>
 

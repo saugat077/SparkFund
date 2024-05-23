@@ -1,77 +1,14 @@
-@charset "utf-8";
+/* .feature-section {
+  padding: 60px 50px;
+} */
 
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
-
-.clear {
-  clear: both;
-}
-.game-section img {
-  max-width: 100%;
-  border: 0px;
-}
-ul,
-ol {
-  list-style: none;
-}
-a {
-  text-decoration: none;
-  color: inherit;
-  outline: none;
-  transition: all 0.4s ease-in-out;
-  -webkit-transition: all 0.4s ease-in-out;
-}
-a:focus,
-a:active,
-a:visited,
-a:hover {
-  text-decoration: none;
-  outline: none;
-}
-
-.game-section h3 {
+.feature-section h3 {
   margin: 0 0 10px;
   font-size: 28px;
   line-height: 36px;
 }
-.game-section button {
-  outline: none !important;
-}
-/******* Common Element CSS End *********/
 
-/* -------- title style ------- */
-.line-title {
-  position: relative;
-  width: 400px;
-}
-.line-title::before,
-.line-title::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  border-radius: 2px;
-}
-.line-title::before {
-  width: 100%;
-  background: #f2f2f2;
-}
-.line-title::after {
-  width: 32px;
-  background: #e73700;
-}
-
-/******* Middle section CSS Start ******/
-/* -------- Landing page ------- */
-/* .game-section {
-  padding: 60px 50px;
-} */
-.game-section .owl-stage {
-  margin: 15px 0;
-  display: flex;
-  display: -webkit-flex;
-}
-.game-section .item {
+.feature-section .item {
   margin: 0 15px 60px;
   width: 320px;
   height: 400px;
@@ -87,12 +24,14 @@ a:hover {
   -webkit-transition: all 0.4s ease-in-out;
   cursor: pointer;
 }
-.game-section .item.active {
+
+.feature-section .item.active {
   width: 500px;
   box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 12px 40px 40px rgba(0, 0, 0, 0.25);
 }
-.game-section .item:after {
+
+.feature-section .item:after {
   content: "";
   display: block;
   position: absolute;
@@ -102,7 +41,8 @@ a:hover {
   top: 0;
   background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
-.game-section .item-desc {
+
+.feature-section .item-desc {
   padding: 0 24px 12px;
   color: #fff;
   position: relative;
@@ -113,65 +53,66 @@ a:hover {
   transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
 }
-.game-section .item.active .item-desc {
+
+.feature-section .item.active .item-desc {
   transform: none;
   -webkit-transform: none;
 }
-.game-section .item-desc p {
+
+.feature-section .item-desc p {
   opacity: 0;
   -webkit-transform: translateY(32px);
   transform: translateY(32px);
   transition: all 0.4s ease-in-out 0.2s;
   -webkit-transition: all 0.4s ease-in-out 0.2s;
 }
-.game-section .item.active .item-desc p {
+
+.feature-section .item.active .item-desc p {
   opacity: 1;
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-.game-section .owl-theme.custom-carousel .owl-dots {
+.feature-section .owl-theme.custom-carousel .owl-dots {
   margin-top: -20px;
   position: relative;
   z-index: 5;
 }
 
-/******** Middle section CSS End *******/
-
 /***** responsive css Start ******/
 
 @media (min-width: 992px) and (max-width: 1199px) {
-  h2 {
+  .feature-section h2 {
     margin-bottom: 32px;
   }
-  h3 {
+  .feature-section h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
   }
 
   /* -------- Landing page ------- */
-  .game-section {
+  .feature-section {
     padding: 50px 30px;
   }
-  .game-section .item {
+  .feature-section .item {
     margin: 0 12px 60px;
     width: 260px;
     height: 360px;
   }
-  .game-section .item.active {
+  .feature-section .item.active {
     width: 400px;
   }
-  .game-section .item-desc {
+  .feature-section .item-desc {
     transform: translateY(calc(100% - 46px));
     -webkit-transform: translateY(calc(100% - 46px));
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
-  h2 {
+  .feature-section h2 {
     margin-bottom: 32px;
   }
-  h3 {
+  .feature-section h3 {
     margin: 0 0 8px;
     font-size: 24px;
     line-height: 32px;
@@ -181,18 +122,18 @@ a:hover {
   }
 
   /* -------- Landing page ------- */
-  .game-section {
+  .feature-section {
     padding: 50px 30px 40px;
   }
-  .game-section .item {
+  .feature-section .item {
     margin: 0 12px 60px;
     width: 240px;
     height: 330px;
   }
-  .game-section .item.active {
+  .feature-section .item.active {
     width: 360px;
   }
-  .game-section .item-desc {
+  .feature-section .item-desc {
     transform: translateY(calc(100% - 42px));
     -webkit-transform: translateY(calc(100% - 42px));
   }
@@ -202,10 +143,10 @@ a:hover {
   body {
     font-size: 14px;
   }
-  h2 {
+  .feature-section h2 {
     margin-bottom: 20px;
   }
-  h3 {
+  .feature-section h3 {
     margin: 0 0 8px;
     font-size: 19px;
     line-height: 24px;
@@ -215,20 +156,20 @@ a:hover {
   }
 
   /* -------- Landing page ------- */
-  .game-section {
+  .feature-section {
     padding: 30px 15px 20px;
   }
-  .game-section .item {
+  .feature-section .item {
     margin: 0 10px 40px;
     width: 200px;
     height: 280px;
   }
-  .game-section .item.active {
+  .feature-section .item.active {
     width: 270px;
     box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 6px 10px 10px rgba(0, 0, 0, 0.25);
   }
-  .game-section .item-desc {
+  .feature-section .item-desc {
     padding: 0 14px 5px;
     transform: translateY(calc(100% - 42px));
     -webkit-transform: translateY(calc(100% - 42px));
