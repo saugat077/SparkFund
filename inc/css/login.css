@@ -1,4 +1,16 @@
+/** Imported Google Fonts **/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
 
 :root {
   --main: #0e0e11;
@@ -17,7 +29,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Main container */
+/********** Main container **********/
 .reg-main-container {
   display: flex;
   align-items: center;
@@ -55,6 +67,12 @@ body {
   font-weight: 700;
 }
 
+.sign-up-label {
+  margin-top: 150px;
+  font-size: 14px;
+  color: #747474;
+}
+
 .sign-up-link {
   margin-left: 1rem;
   font-size: 14px;
@@ -64,7 +82,11 @@ body {
   font-weight: 800;
 }
 
-/* Right side Signup/register section*/
+.sign-up-link a:visited {
+  color: var(--accent);
+}
+
+/* Right side Sign-up /register section*/
 .form-container {
   box-sizing: border-box;
 }
@@ -95,7 +117,7 @@ input {
 }
 
 .input input:focus {
-  border: 5px solid var(--accent);
+  border: 3px solid var(--accent);
 }
 
 /* Password */
@@ -112,7 +134,7 @@ input {
 }
 
 .box:focus {
-  border: 5px solid var(--accent);
+  border: 3px solid var(--accent);
 }
 
 .box input {
@@ -218,16 +240,6 @@ input {
 
 .page-link-label:hover {
   color: var(--white);
-}
-
-.sign-up-label {
-  margin-top: 150px;
-  font-size: 14px;
-  color: #747474;
-}
-
-.sign-up-link a:visited {
-  color: var(--accent);
 }
 
 /* Signup with google css */
