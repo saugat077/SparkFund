@@ -9,14 +9,25 @@ session_start();
 $message = "";
 $success = false;
 
-// Check if eventId and userId are stored in session
-if (isset($_SESSION['eventId'], $_SESSION['userId'])) {
-    // Retrieve eventId and userId from session
+// Check if eventId, userId, and donationAmount are stored in session
+if (isset($_SESSION['eventId'], $_SESSION['userId'], $_SESSION['donationAmount'])) {
+    // Retrieve eventId, userId, and donationAmount from session
     $eventId = $_SESSION['eventId'];
     $userId = $_SESSION['userId'];
+    $donationAmount = $_SESSION['donationAmount'];
+
+    // Insert data into the database
+    $insert_query = $conn->prepare('INSERT INTO donations (funds_id, user_id, amount) VALUES (?, ?, ?)');
+    $insert_query->bind_param('iii', $eventId, $userId, $donationAmount);
     
-    $message = "Donation successful";
-    $success = true;
+    if ($insert_query->execute()) {
+        $message = "Donation successful";
+        $success = true;
+    } else {
+        $message = "Error: Failed to process donation. Please try again later.";
+    }
+
+    $insert_query->close();
 } else {
     $message = "Error: Required parameters missing.";
 }
@@ -29,22 +40,22 @@ if (isset($_SESSION['eventId'], $_SESSION['userId'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donation Status</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
 
     <style>
         /** Imported Google Fonts **/
         @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
         :root {
-  --main: #0e0e11;
-  --secondary: #2a2b2b;
-  --white: #fefffe;
-  --accent: #66c18f;
-  --accent2: #defcf9;
-}
+            --main: #0e0e11;
+            --secondary: #2a2b2b;
+            --white: #fefffe;
+            --accent: #66c18f;
+            --accent2: #defcf9;
+        }
         body {
             font-family: "Poppins", sans-serif;
-
             background-color: var(--main);
             display: flex;
             justify-content: center;
@@ -59,10 +70,10 @@ if (isset($_SESSION['eventId'], $_SESSION['userId'])) {
             border-radius: 20px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .container>*{
+        .container>* {
             margin-bottom: 2rem;
         }
-        i{
+        i {
             font-size: 5em;
             color: <?php echo $success ? 'var(--accent)' : 'red'; ?>;
         }
@@ -90,7 +101,7 @@ if (isset($_SESSION['eventId'], $_SESSION['userId'])) {
 <body>
     <div class="container">
         <div>
-        <i class="fa-regular fa-circle-check"></i>
+            <i class="fa-regular fa-circle-check"></i>
         </div>
         <div class="message">
             <?php echo $message; ?>
