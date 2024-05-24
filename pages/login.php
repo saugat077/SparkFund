@@ -32,7 +32,7 @@ if ($loginStatus === "fail") {
 <body>
 
   <div class="reg-main-container"> 
-    
+
     <!-- Container with two grids: one for the title and one for the form -->
     <div class="register-container">
       <!-- Left Side Title Section -->
@@ -90,8 +90,6 @@ if ($loginStatus === "fail") {
   </div>
 
   <!-- Scripts -->
-  <script src="../inc/js/pwvalidate.js"></script> <!-- Password validation script -->
-  <script src="../inc/js/register_emptyfield_validate.js"></script> <!-- Empty field validation script -->
-  <script src="../inc/js/toggle.js"></script> <!-- Toggle password visibility script -->
+  <script src="../inc/js/Pw_toggle.js"></script> <!-- Toggle password visibility script -->
 </body>
 </html>

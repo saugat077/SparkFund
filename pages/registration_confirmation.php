@@ -16,7 +16,7 @@ if (isset($_GET['registration']) && $_GET['registration'] === "success") {
 
     // Determine the reason for registration failure
     if ($_GET['error'] === "emailtaken") {
-        $secondary_message = "The email provided is already in use. Please use different email.";
+        $secondary_message = "The email provided is already in use. Please use a different email.";
     } elseif ($_GET['error'] === "sqlerror") {
         $secondary_message = "An error occurred while processing your request. Please try again later.";
     } else {
@@ -48,48 +48,41 @@ if (isset($_GET['login']) && $_GET['login'] === "success") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmation</title>
     <link rel="stylesheet" href="../inc/css/loading.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Loading animation -->
-<div class="center-body">
-  <div class="loader-circle-9">
-    <p>Loading</p>
-    <span></span>
-  </div>
-</div>
-
-<!-- Displaying the card with a message -->
-<div class="confirm-body">
-    <div class="confirmation-card">
-        <div class="confirm-inner-body">
-
-        
-        <div class="confirm-message">
-            <div class="main-area"><?php echo $main_message; ?></div>
-            <div class="secondary-area"><?php echo $secondary_message; ?></div>
-            <div class="confirm-image"><img src="<?php echo $imagePath; ?>" alt=""></div>
-        </div>
-        <div class="confirm-link">
-            <a href="./register.php">Go back</a>
-             <?php if (isset($_GET['registration']) && $_GET['registration'] === "success"): ?>
-                <a href="./login.php">Login</a>
-                <?php endif; ?>
-            </div>
-
+    <div class="center-body">
+        <div class="loader-circle-9">
+            <p>Loading</p>
+            <span></span>
         </div>
     </div>
-</div>
 
-<script>
-        // JavaScript code to hide loader and display card after 2 seconds
+    <!-- Displaying the card with a message -->
+    <div class="confirm-body">
+        <div class="confirmation-card">
+            <div class="confirm-inner-body">
+                <div class="confirm-message">
+                    <div class="main-area"><?php echo $main_message; ?></div>
+                    <div class="secondary-area"><?php echo $secondary_message; ?></div>
+                    <div class="confirm-image"><img src="<?php echo $imagePath; ?>" alt=""></div>
+                </div>
+                <div class="confirm-link">
+                    <a href="./register.php">Go back</a>
+                    <?php if (isset($_GET['registration']) && $_GET['registration'] === "success"): ?>
+                        <a href="./login.php">Login</a>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code to hide loader and display card after 1.2 seconds
         setTimeout(function() {
             document.querySelector('.loader-circle-9').style.display = 'none';
             document.querySelector('.confirmation-card').style.display = 'block';
-        }, 1500);
+        }, 1200);
     </script>
-
 </body>
 </html>

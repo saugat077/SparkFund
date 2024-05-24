@@ -71,6 +71,7 @@
           <div class="validation">
             <p>Passwords must meet the following requirements:</p>
             <ul>
+              <!-- we pull these id in pw_validate.js for validation -->
               <li id="length">Must be 8-12 Characters Long</li> 
               <li id="upper">At least One Uppercase</li>
               <li id="lower">At least One Lowercase</li>
@@ -87,9 +88,13 @@
   </div>
 
   <!-- JavaScript files for form validation and functionality -->
-  <script src="../inc/js/pwvalidate.js"></script> <!-- Password validation script -->
-  <script src="../inc/js/register_emptyfield_validate.js"></script> <!-- Empty field validation script -->
-  <script src="../inc/js/toggle.js"></script> <!-- Toggle password visibility script -->
+
+  <!-- Password validation script that checks pw strength and updates the icon-->
+  <script src="../inc/js/Pw_validation.js"></script> 
+  <!-- Empty field validation script -->
+  <script src="../inc/js/Registration_Custom_validate.js"></script>
+  <!-- Toggle password visibility script -->
+  <script src="../inc/js/Pw_toggle.js"></script> 
 
 </body>
 </html>
