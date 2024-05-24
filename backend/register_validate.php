@@ -64,7 +64,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     // Registration successful, send email to the user
                     $receiverEmail = $email;
                     $receiverName = $fname . ' ' . $lname;
-                    require_once '../backend/send_mail.php'; // Include send_mail.php only when registration is successful
+                    require_once '../backend/registration_mail.php'; // Include send_mail.php only when registration is successful
 
                     // Redirect to confirmation page with success message
                     header("Location: ../pages/registration_confirmation.php?registration=success");
