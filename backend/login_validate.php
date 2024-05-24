@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['user_fname'] = $user['fname'];
             
             // Redirect to login confirmation page with success status
-            header("Location: ../pages/login_confirmation.php?login=success");
+            header("Location: ../pages/registration_confirmation.php?login=success");
             exit();
         } else {
             // Invalid email or password, redirect to login page with failure status
