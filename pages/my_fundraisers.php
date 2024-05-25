@@ -49,9 +49,9 @@
             // Display the total donations raised and the progress bar
             echo '<div class="donation-raised">';
             if ($totalDonations == 0) {
-                echo '<h5 style="color:var(--white)">$0 raised of $' . $fundTarget . ' goal.</h5>';
+                echo '<h5 style="color:var(--white)">NRs 0 raised of NRs' . $fundTarget . ' goal.</h5>';
             } else {
-                echo '<h5 style="color:var(--white)">$' . $totalDonations . ' raised of $' . $fundTarget . ' goal.</h5>';
+                echo '<h5 style="color:var(--white)">NRs ' . $totalDonations . ' raised of NRs' . $fundTarget . ' goal.</h5>';
             }
             echo '</div>';
 

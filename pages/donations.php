@@ -1,4 +1,4 @@
-<?php
+NRs <?php
 session_start();
 ?>
 <!DOCTYPE html>
@@ -59,9 +59,9 @@ if (mysqli_num_rows($result) > 0) {
         // Display the total donations raised and the progress bar
         echo '<div class="donation-raised">';
         if ($totalDonations == 0) {
-            echo '<h5 style="color:var(--white)">$0 raised of $' . $fundTarget . ' goal.</h5>';
+            echo '<h5 style="color:var(--white)">NRs 0 raised of NRs ' . $fundTarget . ' goal.</h5>';
         } else {
-            echo '<h5 style="color:var(--white)">$' . $totalDonations . ' raised of $' . $fundTarget . ' goal.</h5>';
+            echo '<h5 style="color:var(--white)">NRs ' . $totalDonations . ' raised of NRs ' . $fundTarget . ' goal.</h5>';
         }
         echo '</div>';
 
@@ -83,7 +83,7 @@ if (mysqli_num_rows($result) > 0) {
 
 
         echo '<div class="user-donation">';
-        echo '<p>You donated: <span>$' . $totalDonations . '</span></p>';
+        echo '<p>You donated: <span>NRs ' . $totalDonations . '</span></p>';
         echo '</div>';
 
         echo '</div>';
