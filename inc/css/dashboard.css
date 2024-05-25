@@ -67,15 +67,9 @@ aside .middle .nav-list li {
   text-decoration: none;
 }
 
-aside .middle .nav-list a:hover {
-  color: var(--accent);
-}
-
-aside .middle .nav-list a:active,
-aside .middle .nav-list a:focus {
-  background: var(--secondary) !important;
-  color: var(--accent) !important;
-  text-decoration: none !important;
+.nav-list li a.active {
+  background-color: var(--accent);
+  /* color: var(--main); */
 }
 
 .bottom {
