@@ -44,6 +44,14 @@ if(isset($_GET['id'])) {
             $fundTarget = 0; // Default value if no fund target is found
         }
 
+         // Fetch the number of unique donators for the event
+         $uniqueDonators = 0;
+         $query = "SELECT COUNT(DISTINCT user_id) AS unique_donators FROM donations WHERE funds_id = $eventId";
+         $result = mysqli_query($conn, $query);
+         if ($result && mysqli_num_rows($result) > 0) {
+             $uniqueDonators = mysqli_fetch_assoc($result)['unique_donators'];
+         }
+
         // Check if the user is logged in
         $isLoggedIn = isset($_SESSION['user_id']);
     } else {
