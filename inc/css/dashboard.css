@@ -21,26 +21,28 @@
 
 body {
   background: var(--main);
+  height: 100%;
+  /* overflow: hidden; Prevent body from scrolling */
 }
 
 main {
   display: flex;
-  justify-content: space-between;
+  height: 100%;
 }
 
 aside {
   background: var(--main);
-  width: 26%;
-  height: 100vh;
+  position: fixed;
+  width: 20%; /* Set your desired width */
+  height: 100%;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0px 8px 16px var(--accent);
+  /* box-shadow: 0px 8px 16px var(--accent); */
 }
 
 aside .top {
-  /* padding: 25px; */
   padding-block: 3rem;
   padding-inline: 3rem;
 }
@@ -62,18 +64,14 @@ aside .middle .nav-list a {
 aside .middle .nav-list li {
   padding-block: 1rem;
   padding-inline: 2rem;
-  /* margin-inline: 1rem 0; */
-  /* box-shadow: 2px 0 0 var(--body-bg); */
   text-decoration: none;
 }
 
 .nav-list li a.active {
   background-color: var(--accent);
-  /* color: var(--main); */
 }
 
 .bottom {
-  /* background-color: var(--secondary); */
   padding-block: 3rem;
   padding-inline: 3rem;
 }
@@ -82,15 +80,14 @@ aside .middle .nav-list li {
   font-size: 18px;
   color: var(--accent2);
 }
-/* .active{
-    background: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 73%, rgba(252,176,69,1) 100%);
-    font-size: 28px;
-  } */
 
 .dashContainer {
-  flex-grow: 1;
-  padding: 2rem 10rem 2rem 12rem;
+  margin-left: 20%; /* Same width as the aside */
+  width: calc(100% - 200px); /* Full width minus the width of the aside */
+  padding: 2rem 10rem; /* Padding for content within container */
+  height: 100%;
+  overflow-y: auto; /* Enables vertical scrolling */
+  /* background-color: #fff; Background color for visual clarity */
 }
 
 header {
@@ -120,4 +117,28 @@ button {
 section {
   /* width: 1000px; */
   margin: 0px auto;
+}
+
+/* Scroll bar */
+/* For Chrome, Safari, and Opera */
+body::-webkit-scrollbar {
+  width: 5px;
+  /* display: none; */
+  /* background-color: transparent; */
+}
+
+/* Customize the scrollbar track */
+body::-webkit-scrollbar-track {
+  background-color: transparent; /* Change the color as needed */
+}
+
+/* Customize the scrollbar handle */
+body::-webkit-scrollbar-thumb {
+  background-color: var(--accent); /* Change the color as needed */
+  border-radius: 10px; /* Roundness of the scrollbar handle */
+}
+
+/* On hover, the scrollbar handle */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Change the color as needed */
 }

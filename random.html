@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /* General styles */
+      * {
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
+      }
+
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* Prevent body from scrolling */
+      }
+
+      /* Style for main element to use flex layout */
+      main {
+        display: flex;
+        height: 100%;
+      }
+
+      /* Fixed aside element on the left side */
+      aside {
+        position: fixed;
+        width: 500px; /* Set your desired width */
+        height: 100%;
+        background-color: #f0f0f0; /* Background color for visual clarity */
+        padding: 20px; /* Padding for content within aside */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Optional shadow for better separation */
+      }
+
+      /* Scrollable container */
+      .container {
+        margin-left: 500px; /* Same width as the aside */
+        width: calc(100% - 200px); /* Full width minus the width of the aside */
+        padding: 20px; /* Padding for content within container */
+        height: 100%;
+        overflow-y: auto; /* Enables vertical scrolling */
+        background-color: #fff; /* Background color for visual clarity */
+      }
+
+      .box {
+        height: 40rem;
+        width: 40rem;
+        background-color: red;
+        margin: 5rem 0; /* Vertical margin for spacing between boxes */
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <aside>This is aside</aside>
+      <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </main>
+  </body>
+</html>
