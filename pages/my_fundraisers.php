@@ -63,8 +63,7 @@
 
             // Edit and delete buttons
             echo '<div class="entry-actions">';
-            echo '<a href="edit.php?id=' . $eventId . '" class="btn-edit"><i class="fa-solid fa-pen-to-square"></i></a>';
-            echo '<a href="../backend/fund_delete.php?id=' . $eventId . '" class="btn-delete" onclick="return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa-regular fa-trash-can"></i></a>';
+            // echo '<a href="../backend/fund_delete.php?id=' . $eventId . '" class="btn-delete" onclick="return confirm(\'Are you sure you want to delete this entry?\')"><i class="fa-regular fa-trash-can"></i></a>';
             echo '</div>';
 
             echo '</div>';
