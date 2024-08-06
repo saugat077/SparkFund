@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 )
             )),
             CURLOPT_HTTPHEADER => array(
-                'Authorization: Key 32567c683cd7483cb222795afd7af5a5',
+                'Authorization: Key 32567c683cd7483cb222795afd7af5a5', // Replace with your Khalti Merchant API key
                 'Content-Type: application/json',
             ),
         ));
